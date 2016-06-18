@@ -5,6 +5,7 @@
 	description="Presets for forest and forestry tagging"
 	author="igitov"
 	version="0.1.10"
+	link="https://github.com/igitov/forest-josm-tagging-presets"
 -->
 	<group name="Forest and forestry" ru.name="Лес и лесное хозяйство" icon="wood.png">
 		<group name="Properties of Wood" ru.name="Свойства леса" icon="wood.png">
