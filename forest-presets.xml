@@ -1,0 +1,328 @@
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0">
+<!--
+	shortdescription="Forest"
+	ru.shortdescription="Лес"
+	description="Presets for forest and forestry tagging"
+	author="igitov"
+	version="0.1.10"
+-->
+	<group name="Forest and forestry" ru.name="Лес и лесное хозяйство" icon="wood.png">
+		<group name="Properties of Wood" ru.name="Свойства леса" icon="wood.png">
+				<item name="General Properties of Wood" ru.name="Общие свойства леса" icon="wood.png" type="node,closedway,multipolygon">
+					<label text="Edit Properties of Wood" ru.text="Общие свойства леса"/>
+					<text key="name" text="Name" />
+					<key key="natural" value="wood" />
+					<space />
+					<combo key="leaf_type" text="Type" ru.text="Тип листьев" values="broadleaved,needleleaved,mixed,leafless" >
+						<list_entry value="needleleaved" display_value="needleleaved" ru.display_value="Хвойный (иглолистный)" />
+						<list_entry value="broadleaved" display_value="broadleaved" ru.display_value="Лиственный (широколистный)" />
+						<list_entry value="mixed" display_value="Mixed" ru.display_value="Смешанный" />
+						<list_entry value="leafless" display_value="leafless" ru.display_value="Безлистный" />
+					</combo>
+					<combo key="leaf_cycle" text="Cycle" ru.text="Фенологический цикл" >
+						<list_entry value="evergreen" display_value="Evergreen" ru.display_value="Вечнозелёный" />
+						<list_entry value="deciduous" display_value="Deciduous" ru.display_value="Листопадный" />
+						<list_entry value="semi_evergreen" display_value="Semi_evergreen" ru.display_value="Полувечнозелёный" />
+						<list_entry value="semi_deciduous" display_value="Semi_deciduous" ru.display_value="Полулистопадный" />
+						<list_entry value="mixed" display_value="Mixed" ru.display_value="Смешанный" />
+					</combo>
+					<combo key="wood:origin" text="Origin" ru.text="Происхождение леса" >
+						<list_entry value="man_made" display_value="Man-made" ru.display_value="Рукотворное (посадки)" />
+						<list_entry value="natural" display_value="Natural" ru.display_value="Естественное" />
+					</combo>
+					<combo key="start_date" text="Start Date of wood" ru.text="Дата возникновения (год)" values="~1960s,1960s,~1961,1961" />
+					<combo key="wood:age" text="Age" ru.text="Возраст" >
+						<list_entry value="very_young" display_value="Very young" ru.display_value="Очень молодой лес" ru.short_description="деревца высотой до 3 м, толщина стволика до 2...4 см, крона на уровне глаз или ниже, возраст для быстрорастущих пород - до 10 лет, для медленнорастущих и хвойных - до 20 лет" />
+						<list_entry value="young" display_value="Young" ru.display_value="Молодой лес" ru.short_description="молодые деревья от 3 до 10 м в высоту, стволик от 2...4 до 8...10 см, крона выше уровня глаз, но просматриваемость часто осложняется обилием нижних отмирающих веток, возраст до 20 лет для быстрорастущих и до 30 лет для медленнорастущих и хвойных" />
+						<list_entry value="middle" display_value="Middle" ru.display_value="Средневозрастный лес" ru.short_description="высота деревьев более 10 м, толщина ствола от 8...10 до 16...20, кроны оформились, стволы хорошо очищены от сучьев, возраст 20...30 лет для быстрорастущих и 40...60 для медленнорастущих и хвойных" />
+						<list_entry value="adult" display_value="Adult" ru.display_value="Взрослый лес" ru.short_description="характеризуется замедлением роста деревьев в высоту и быстрым ростом в толщину, возраст 40...80 лет для быстрорастущих и 80...120 лет для медленнорастущих и хвойных" />
+						<list_entry value="old" display_value="Old" ru.display_value="Старый лес" ru.short_description="рост деревьев замедляется и почти прекращается, усиливается отпад, много сухостоя и валежа, лес изреживается, возраст более 80 лет для быстрорастущих пород и более 120 для медленнорастущих и хвойных" />
+					</combo>
+					<combo key="wood:density" text="Density" ru.text="Густота" >
+						<list_entry value="very_sparse" display_value="Very sparse" ru.display_value="Очень редкий лес" ru.short_description="сомкнутость крон не превышает 20 процентов" />
+						<list_entry value="sparse" display_value="Sparse" ru.display_value="Редкий лес" ru.short_description="сомкнутость крон от 21 до 40 процентов" />
+						<list_entry value="middle" display_value="Middle" ru.display_value="Лес средней густоты" ru.short_description="сомкнутость крон от 41 до 60 процентов" />
+						<list_entry value="normal" display_value="Normal" ru.display_value="Лес нормальной густоты" ru.short_description="сомкнутость крон от 61 до 80 процентов" />
+						<list_entry value="dense" display_value="Dense" ru.display_value="Густой лес" ru.short_description="сомкнутость крон от 81 до 100 процентов" />
+					</combo>
+					<optional>
+						<text key="height" text="Height (m)" ru.text="Высота, м" />
+					</optional>
+				</item>
+				<item name="Flaw of Wood" ru.name="Пороки роста и развития леса" icon="wood_flaw.png" type="node,closedway,multipolygon">
+					<combo key="wood:flaw" text="Flaw" ru.text="Пороки развития" >
+						<list_entry value="krummholz" display_value="Krummholz" ru.display_value="Криволесье" ru.short_description="невысокий лес из деревьев с искривлёнными стволами и ветвями" />
+						<list_entry value="stunted" display_value="Stunted" ru.display_value="Низкорослый лес" ru.short_description="лес, неспособный достичь нормальной высоты вследствие неблагоприятных условий для произрастания" />
+					</combo>
+				</item>
+				<item name="Damaged Wood" ru.name="Повреждённый, больной лес" icon="wood_damage.png" type="node,closedway,multipolygon">
+					<combo key="wood:damage" text="Damage" ru.text="Повреждения (нелетальные)" >
+						<list_entry value="windfall" display_value="Windfall" ru.display_value="Ветровальный лес"  ru.short_description="лес, значительно пострадавший от ветровала и бурелома" />
+						<list_entry value="burnt" display_value="Burnt wood" ru.display_value="Горельник"  ru.short_description="лес, повреждённый пожаром, обожженный, но большей частью живой" />
+						<list_entry value="dead_wood" display_value="Dead wood" ru.display_value="Усыхающий лес"  ru.short_description="лес со значительным количеством усохших на корню деревьев"/>
+					</combo>
+					<optional>
+						<combo key="damage:start_date" text="Date of Damage" ru.text="Дата повреждения(год)" values="~1960s,1960s,~1961,1961" />
+					</optional>
+				</item>
+				<item name="Dead and burnt Wood" ru.name="Погибший лес" icon="deadwood.png" type="node,closedway,multipolygon">
+					<combo key="wood:lost" text="Lost" ru.text="Погибший лес" >
+						<list_entry value="windfall" display_value="Windfall" ru.display_value="Ветровал" ru.short_description="лес, погибший в результате сплошного ветровала и бурелома" />
+						<list_entry value="burnt" display_value="Burnt wood" ru.display_value="Гарь" ru.short_description="лес, погибший в результате природного пожара" />
+						<list_entry value="dead_wood" display_value="Dead wood" ru.display_value="Сухостой" ru.short_description="лес, усохший на корню" />
+					</combo>
+					<optional>
+						<combo key="lost:start_date" text="Date of Lost" ru.text="Дата гибели леса(год)" values="~1960s,1960s,~1961,1961" />
+					</optional>
+				</item>
+				<item name="Logging Area" ru.name="Вырубка" icon="logging.png" type="node,closedway,multipolygon">
+					<key key="landuse" value="logging" />
+					<combo key="logging:start_date" text="Start Date of Logging" ru.text="Дата (год) вырубки" values="~1960s,1960s,~1961,1961" />
+					<combo key="logging" text="Type of Logging Area" ru.text="Вид рубки" >
+						<list_entry value="clearcutting" display_value="Сlearcutting" ru.display_value="Сплошная" ru.short_description="территория, где в процессе рубки вырублен весь древостой, за исключением молодого поколения леса и единичных деревьев, составлявших основной древостой " />
+						<list_entry value="selective_cutting" display_value="Selective cutting" ru.display_value="Выборочная" ru.short_description="территория, где в процессе рубки вырублена часть основного древостоя" />
+					</combo>
+				</item>
+		</group> <!-- Properties of Wood -->
+		<group name="Quick - Wood" ru.name="Быстро -  лес" icon="quick_wood.png">
+					<item name="Coniferous forest" ru.name="Хвойные леса умеренных широт" icon="coniferous.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="leaf_type" value="needleleaved" />
+						<key key="leaf_cycle" value="evergreen" />
+					</item>
+					<item name="Larch forest" ru.name="Хвойные листопадные леса (лиственница)" icon="coniferous.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="leaf_type" value="needleleaved" />
+						<key key="leaf_cycle" value="deciduous" />
+					</item>
+					<item name="Deciduous forest" ru.name="Лиственные леса умеренных широт" icon="deciduous.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="leaf_type" value="broadleaved" />
+						<key key="leaf_cycle" value="deciduous" />
+					</item>
+					<item name="Mixed forest" ru.name="Смешанные леса" icon="wood.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="leaf_type" value="mixed" />
+					</item>
+					<separator/>
+					<item name="Young forest" ru.name="Молодой лес" icon="young_forest.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="wood:age" value="young" />
+					</item>
+					<item name="Artificial forest" ru.name="Рукотворный лес" icon="young_forest.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="wood:origin" value="man_made" />
+					</item>
+					<item name="Sparse forest" ru.name="Редкий лес" icon="sparse_forest.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="wood:density" value="sparse" />
+					</item>
+					<item name="Windfall" ru.name="Ветровальный лес" icon="windfall_forest.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="wood:damage" value="windfall" />
+					</item>
+					<separator/>
+					<item name="Burnt forest" ru.name="Гарь" icon="burnt_forest.png" type="node,closedway,multipolygon">
+						<key key="natural" value="heath" />
+						<key key="wood:lost" value="burnt" />
+					</item>
+					<item name="Logging" ru.name="Вырубка" icon="cutting_forest.png" type="node,closedway,multipolygon">
+						<key key="landuse" value="logging" />
+					</item>
+		</group> <!-- Quick - Wood -->
+		<group  name="Forestry Compartment and Cutline" ru.name="Лесные кварталы и просеки" icon="forestry_comp.png" > <!--  -->
+			<item name="Forestry Compartment" ru.name="Лесной квартал" icon="forestry_comp.png" type="node,closedway,multipolygon">
+				<label text="Edit Forestry Compartment" ru.text="Свойства лесного квартала" />
+				<space />
+				<key key="boundary" value="forestry_compartment" />
+				<text key="ref" text="Ref" ru.text="Номер квартала" />
+				<text key="old_ref" text="Old Ref" ru.text="Старый номер квартала" />
+				<text key="operator" text="Operator" />
+				<text key="tenant" text="Tenant" ru.text="Арендатор" />
+			</item>
+			<separator/>
+			<item name="Cutline" ru.name="Просека" icon="cutline.png" type="way,closedway">
+				<label text="Edit Cutline" ru.text="Свойства просеки" />
+				<key key="man_made" value="cutline" />
+				<text key="name" text="Name" />
+				<multiselect key="cutline" text="Cutline" ru.text="Просека" delimiter="4" >
+					<list_entry value="firebreak" display_value="Firebreak" ru.display_value="Противопожарная" />
+					<list_entry value="section" display_value="section" ru.display_value="Квартальная" />
+					<list_entry value="border" display_value="Border" ru.display_value="Граничная хозяйственная" />
+					<list_entry value="logway" display_value="Logway" ru.display_value="Трелёвочный волок" />
+				</multiselect>
+				<optional>
+					<combo key="highway" text="Highway" >
+						<list_entry value="path" display_value="Path" ru.display_value="Тропа" />
+						<list_entry value="track" display_value="Track" ru.display_value="Лесная дорога" />
+						<list_entry value="service" display_value="Service" ru.display_value="Проезд" />
+						<list_entry value="unclassified" display_value="Unclassified" ru.display_value="Неклассифицированная" />
+					</combo>
+					<combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
+					<check key="embankment" text="Embankment" value_on="yes" disable_off="true" />
+					<combo key="power" text="Power line" ru.text="ЛЭП" >
+						<list_entry value="minor_line" display_value="Minor line" ru.display_value="Среднего/низкого напряжения" />
+						<list_entry value="line" display_value="Line" ru.display_value="Высоковольтная" />
+					</combo>
+					<combo key="barrier" text="Barrier" ru.text="Преграда (для огня)" >
+						<list_entry value="furrow" display_value="Furrow" ru.display_value="Борозда" />
+						<list_entry value="ditch" display_value="Ditch" ru.display_value="Канава (сухая)" />
+					</combo>
+					<combo key="waterway" text="Waterway" ru.text="Искусственный водоток" >
+						<list_entry value="ditch" display_value="Ditch" ru.display_value="Канава" />
+						<list_entry value="drain" display_value="Drain" ru.display_value="Мелиоративный канал" />
+					</combo>
+					<text key="width" text="Width (meters)" />
+				</optional>
+			</item>
+			<item name="Logway" ru.name="Трелёвочный волок" icon="logway.png" type="way">
+				<label text="Edit Logway" ru.text="Свойства волока" />
+				<key key="man_made" value="logway" />
+				<combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
+				<text key="width" text="Width (meters)" />
+			</item>
+			<item name="Furrow" ru.name="Плужная борозда" icon="furrow.png" type="way">
+				<label text="Edit Furrow" ru.text="Свойства борозды" />
+				<key key="barrier" value="furrow" />
+				<text key="width" text="Width (meters)" />
+			</item>
+			<separator />
+			<item name="Signpost of forestry compartment" ru.name="Квартальный столб" icon="signpost.png" type="node">
+				<label text="Edit Signpost of compartment (Several values have to be separated by a semicolon)" ru.text="Свойства квартального столба (несколько значений тегов разделять точкой с запятой)" />
+				<key key="signpost" value="forestry_compartment" />
+				<text key="inscription" text="Inscription" ru.text="Надписи)"  />
+				<combo key="direction" text="Direction of Inscription" ru.text="Направления надписей)" values="N,NE,E,SE,S,SW,W,NW" display_values="N,NE,E,SE,S,SW,W,NW" ru.display_values="N,NE,E,SE,S,SW,W,NW" />
+			</item>
+			<item name="Signpost of forestry allotment" ru.name="Деляночный столб" icon="signpost.png" type="node">
+				<label text="Edit Signpost of allotment  (Several values have to be separated by a semicolon)" ru.text="Свойства деляночного столба (несколько значений тегов разделять точкой с запятой)" />
+				<key key="signpost" value="forestry_allotment" />
+				<text key="inscription" text="Inscription" ru.text="Надписи)"  />
+				<combo key="direction" text="Direction of Inscription" ru.text="Направления надписей)" values="N,NE,E,SE,S,SW,W,NW" display_values="N,NE,E,SE,S,SW,W,NW" ru.display_values="N,NE,E,SE,S,SW,W,NW" />
+			</item>
+		</group>
+		<group  name="Amenity in Forest" ru.name="Объекты благоустройства" icon="picnic.png" > <!--  -->
+				<item name="Forestry signs" ru.name="Указатель, аншлаг" icon="info_board.png" type="node">
+					<label text="Edit Forestry sign" ru.text="Свойства указателя, аншлага" />
+					<combo key="forestry_sign" text="Forestry sign" ru.text="Назначение знака" default="yes" >
+						<list_entry value="informational" display_value="Informational" ru.display_value="Информационный аншлаг" />
+						<list_entry value="wildfire_prevention" display_value="Wildfire prevention" ru.display_value="Противопожарный аншлаг" />
+						<list_entry value="forest_district" display_value="Name of forest district" ru.display_value="Указатель лесничества" />
+						<list_entry value="fire_danger_rating" display_value="Fire danger rating" ru.display_value="Указатель пожарной опасности" />
+						<list_entry value="yes" display_value="Yes" ru.display_value="(указатель, аншлаг)" />
+					</combo>
+					<text key="name" text="Name" />
+					<text key="inscription" text="Inscription" ru.text="Надпись" />
+					<optional>
+						<text key="operator" text="Operator" />
+						<combo key="sign:construction" text="Construction of sign" ru.text="Конструкция сооружения" values="banner,outsize,monumental" />
+						<text key="material" text="Material of sign" ru.text="Материал изготовления" />
+					</optional>
+				</item>
+				<item name="Shelter" ru.name="Укрытие от непогоды" icon="shed.png" type="node,closedway">
+					<label text="Edit Shelter" ru.text="Свойства укрытия от непогоды" />
+					<text key="name" text="Name" />
+					<key key="amenity" value="shelter" />
+					<key key="shelter:type" value="weather_shelter" />
+					<optional>
+						<text key="operator" text="Operator" />
+						<combo key="bench" text="Bench" ru.text="Наличие скамьи" values="yes,no" />
+						<combo key="picnic_table" text="Picnic Table" ru.text="Наличие стола" values="yes,no" />
+						<text key="shelter:construction" text="Construction of shelter" ru.text="Конструкция укрытия" />
+						<combo key="material" text="Material of shelter" ru.text="Материал изготовления" values="wood" />
+					</optional>
+				</item>
+				<item name="Picnic table" ru.name="Стол с лавочками" icon="picnic.png" type="node">
+					<label text="Edit Picnic table" ru.text="Свойства стола с лавочками" />
+					<key key="amenity" value="picnic_table" />
+					<text key="name" text="Name" />
+					<optional>
+						<text key="operator" text="Operator" />
+						<combo key="material" text="Material" values="wood" />
+					</optional>
+				</item>
+				<item name="Bench" ru.name="Скамья" icon="seat.png" type="node">
+					<label text="Edit Bench" ru.text="Свойства скамьи" />
+					<key key="amenity" value="bench" />
+					<text key="name" text="Name" />
+					<optional>
+						<text key="operator" text="Operator" />
+						<combo key="backrest" text="Вackrest" ru.text="Наличие спинки" values="yes,no" />
+						<combo key="material" text="Material" values="wood" />
+					</optional>
+				</item>
+				<item name="Fire pit" ru.name="Место для костра" icon="firepit.svg" type="node">
+					<label text="Edit Fire pit" ru.text="Свойства места для костра" />
+					<key key="leisure" value="firepit" />
+					<text key="name" text="Name" />
+					<optional>
+						<text key="operator" text="Operator" />
+						<combo key="material" text="Material" values="ground,stone,metal" />
+					</optional>
+				</item>
+			<separator />
+				<item name="Building" icon="house.png" type="node,closedway,multipolygon" >
+					<space />
+					<combo key="building" text="Building" default="yes" >
+						<list_entry value="yes" display_value="Yes" ru.display_value="Да" />
+						<list_entry value="house" display_value="House" ru.display_value="Жилой дом" />
+						<list_entry value="hut" display_value="Hut" ru.display_value="Хижина" />
+						<list_entry value="cabin" display_value="Cabin" ru.display_value="Будка/Вагончик" />
+						<list_entry value="shed" display_value="Shed" ru.display_value="Сарай" />
+					</combo>
+					<text key="name" text="Name" />
+					<combo key="lock" text="Lock" values="yes,no,unknown" />
+				</item> <!-- Building -->
+			<separator />
+				<item name="Observation Tower" ru.name="Пожарная вышка" icon="tower.svg" type="node,closedway,multipolygon" >
+					<key key="man_made" value="tower" />
+					<key key="tower:type" value="observation" />
+					<space />
+					<text key="name" text="Name" />
+					<text key="ref" text="Reference number" ru.text="Номер вышки" />
+					<text key="operator" text="Operator" />
+					<text key="height" text="Height, m" ru.text="Высота, м" />
+					<combo key="tower:construction" text="Construction" ru.text="Тип конструкции" values="lattice" />
+					<combo key="lock" text="Lock" values="yes,no,unknown" />
+				</item> <!-- Observation Tower -->
+		</group> <!--  -->
+		<group  name="Wildlife Management and Hunting" ru.name="Объекты охотничьего хозяйства" icon="rifle.png" > <!--  -->
+				<item name="Hunting Stand" ru.name="Охотничье укрытие" icon="hunting-stand.svg" type="node">
+					<space />
+					<key key="amenity" value="hunting_stand" />
+					<combo key="hunting_stand" text="Hunting Stand" ru.text="Тип укрытия" default="raised_hide" >
+						<list_entry value="hide" display_value="Hide" ru.display_value="Наземное укрытие" />
+						<list_entry value="raised_hide" display_value="Raised Hide" ru.display_value="Вышка" />
+						<list_entry value="tree_stand" display_value="Tree Stand" ru.display_value="Лабаз на дереве" />
+					</combo>
+					<combo key="shelter" text="Shelter" values="yes,no,unknown" />
+					<combo key="hide" text="Hide" ru.text="Скрытое" values="yes,no,unknown" />
+					<combo key="lock" text="Lock" values="yes,no,unknown" />
+					<optional>
+						<text key="operator" text="Operator" />
+						<text key="height" text="Height, m" ru.text="Высота, м" />
+						<combo key="material" text="Material" values="wood" />
+					</optional>
+				</item> <!-- Hunting Stand -->
+			<separator />
+				<item name="Game Feeder" ru.name="Кормушка для дичи" icon="cratch.png" type="node" >
+					<space />
+					<key key="man_made" value="game_feeder" />
+					<text key="name" text="Name" />
+					<text key="operator" text="Operator" />
+				</item>
+				<item name="Salt Lick" ru.name="Солонец" icon="salt_lick.png" type="node" >
+					<space />
+					<key key="man_made" value="salt_lick" />
+					<text key="name" text="Name" />
+					<text key="operator" text="Operator" />
+				</item>
+			<separator />
+				<item name="Food Plot" ru.name="Кормовое поле" icon="arable.png" type="node,closedway,multipolygon" >
+					<space />
+					<key key="landuse" value="food_plot" />
+					<text key="name" text="Name" />
+					<text key="operator" text="Operator" />
+				</item>
+		</group> <!--  -->
+	</group> <!--  -->
+</presets>
