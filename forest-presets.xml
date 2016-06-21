@@ -36,14 +36,14 @@
 						<list_entry value="very_young" display_value="Very young" ru.display_value="Очень молодой лес" ru.short_description="деревца высотой до 3 м, толщина стволика до 2...4 см, крона на уровне глаз или ниже, возраст для быстрорастущих пород - до 10 лет, для медленнорастущих и хвойных - до 20 лет" />
 						<list_entry value="young" display_value="Young" ru.display_value="Молодой лес" ru.short_description="молодые деревья от 3 до 10 м в высоту, стволик от 2...4 до 8...10 см, крона выше уровня глаз, но просматриваемость часто осложняется обилием нижних отмирающих веток, возраст до 20 лет для быстрорастущих и до 30 лет для медленнорастущих и хвойных" />
 						<list_entry value="middle" display_value="Middle" ru.display_value="Средневозрастный лес" ru.short_description="высота деревьев более 10 м, толщина ствола от 8...10 до 16...20, кроны оформились, стволы хорошо очищены от сучьев, возраст 20...30 лет для быстрорастущих и 40...60 для медленнорастущих и хвойных" />
-						<list_entry value="adult" display_value="Adult" ru.display_value="Взрослый лес" ru.short_description="характеризуется замедлением роста деревьев в высоту и быстрым ростом в толщину, возраст 40...80 лет для быстрорастущих и 80...120 лет для медленнорастущих и хвойных" />
+						<list_entry value="adult" display_value="Mature" ru.display_value="Взрослый лес" ru.short_description="характеризуется замедлением роста деревьев в высоту и быстрым ростом в толщину, возраст 40...80 лет для быстрорастущих и 80...120 лет для медленнорастущих и хвойных" />
 						<list_entry value="old" display_value="Old" ru.display_value="Старый лес" ru.short_description="рост деревьев замедляется и почти прекращается, усиливается отпад, много сухостоя и валежа, лес изреживается, возраст более 80 лет для быстрорастущих пород и более 120 для медленнорастущих и хвойных" />
 					</combo>
 					<combo key="wood:density" text="Density" ru.text="Густота" >
 						<list_entry value="very_sparse" display_value="Very sparse" ru.display_value="Очень редкий лес" ru.short_description="сомкнутость крон не превышает 20 процентов" />
 						<list_entry value="sparse" display_value="Sparse" ru.display_value="Редкий лес" ru.short_description="сомкнутость крон от 21 до 40 процентов" />
-						<list_entry value="middle" display_value="Middle" ru.display_value="Лес средней густоты" ru.short_description="сомкнутость крон от 41 до 60 процентов" />
-						<list_entry value="normal" display_value="Normal" ru.display_value="Лес нормальной густоты" ru.short_description="сомкнутость крон от 61 до 80 процентов" />
+						<list_entry value="middle" display_value="Medium" ru.display_value="Лес средней густоты" ru.short_description="сомкнутость крон от 41 до 60 процентов" />
+						<list_entry value="normal" display_value="Regular" ru.display_value="Лес нормальной густоты" ru.short_description="сомкнутость крон от 61 до 80 процентов" />
 						<list_entry value="dense" display_value="Dense" ru.display_value="Густой лес" ru.short_description="сомкнутость крон от 81 до 100 процентов" />
 					</combo>
 					<optional>
@@ -139,7 +139,7 @@
 				<text key="ref" text="Ref" ru.text="Номер квартала" />
 				<text key="old_ref" text="Old Ref" ru.text="Старый номер квартала" />
 				<text key="operator" text="Operator" />
-				<text key="tenant" text="Tenant" ru.text="Арендатор" />
+				<text key="tenant" text="Lessee" ru.text="Арендатор" />
 			</item>
 			<separator/>
 			<item name="Cutline" ru.name="Просека" icon="cutline.png" type="way,closedway">
