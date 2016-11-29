@@ -4,7 +4,7 @@
 	ru.shortdescription="Лес"
 	description="Presets for forest and forestry tagging"
 	author="igitov"
-	version="0.1.10"
+	version="0.1.12"
 	link="https://github.com/igitov/forest-josm-tagging-presets"
 -->
 	<group name="Forest and forestry" ru.name="Лес и лесное хозяйство" icon="wood.png">
@@ -251,7 +251,7 @@
 						<combo key="material" text="Material" values="wood" />
 					</optional>
 				</item>
-				<item name="Fire pit" ru.name="Место для костра" icon="firepit.svg" type="node">
+				<item name="Fire pit" ru.name="Место для костра" icon="fire-pit.svg" type="node">
 					<label text="Edit Fire pit" ru.text="Свойства места для костра" />
 					<key key="leisure" value="firepit" />
 					<text key="name" text="Name" />
@@ -274,7 +274,7 @@
 					<combo key="lock" text="Lock" values="yes,no,unknown" />
 				</item> <!-- Building -->
 			<separator />
-				<item name="Observation Tower" ru.name="Пожарная вышка" icon="tower.svg" type="node,closedway,multipolygon" >
+				<item name="Observation Tower" ru.name="Пожарная вышка" icon="watchtower.svg" type="node,closedway,multipolygon" >
 					<key key="man_made" value="tower" />
 					<key key="tower:type" value="observation" />
 					<space />
