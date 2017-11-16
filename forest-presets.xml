@@ -1,138 +1,244 @@
-<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0">
-<!--
-	shortdescription="Forest"
-	ru.shortdescription="Лес"
-	description="Presets for forest and forestry tagging"
+<?xml version="1.0" encoding="utf-8"?>
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 	author="igitov"
-	version="0.1.11"
+	version="0.2.10"
+	description="Presets for forest and forestry tagging"
+	ru.description="Лес, лесное и охотничье хозяйство"
+	shortdescription="Forest" ru.shortdescription="Лес"
+	icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/wood.png>
 	link="https://github.com/igitov/forest-josm-tagging-presets"
+<!--
+
+	
 -->
-	<group name="Forest and forestry" ru.name="Лес и лесное хозяйство" icon="wood.png">
-		<group name="Properties of Wood" ru.name="Свойства леса" icon="wood.png">
-				<item name="General Properties of Wood" ru.name="Общие свойства леса" icon="wood.png" type="node,closedway,multipolygon">
+	<chunk id="leaf">
+		<combo key="leaf_type" text="Type" ru.text="Тип листьев" values="broadleaved,needleleaved,mixed,leafless" >
+			<list_entry value="needleleaved" display_value="Needleleaved" ru.display_value="Хвойный (иглолистный)" />
+			<list_entry value="broadleaved" display_value="Broadleaved" ru.display_value="Лиственный (широколистный)" />
+			<list_entry value="mixed" display_value="Mixed" ru.display_value="Смешанный" />
+			<list_entry value="leafless" display_value="Leafless" ru.display_value="Безлистный" />
+		</combo>
+		<combo key="leaf_cycle" text="Cycle" ru.text="Фенологический цикл" >
+			<list_entry value="evergreen" display_value="Evergreen" ru.display_value="Вечнозелёный" />
+			<list_entry value="deciduous" display_value="Deciduous" ru.display_value="Листопадный" />
+			<list_entry value="semi_evergreen" display_value="Semi-evergreen" ru.display_value="Полувечнозелёный" />
+			<list_entry value="semi_deciduous" display_value="Semi-deciduous" ru.display_value="Полулистопадный" />
+			<list_entry value="mixed" display_value="Mixed" ru.display_value="Смешанный" />
+		</combo>
+	</chunk>
+	<chunk id="density">
+		<combo key="scrub:density" text="Density" ru.text="Густота" >
+			<list_entry value="sparse" display_value="Sparse" ru.display_value="Очень низкая" short_description="closure of crowns does not exceed 20 percent" ru.short_description="сомкнутость крон не превышает 20 процентов" />
+			<list_entry value="very_open" display_value="Sparse (very open)" ru.display_value="Низкая" short_description="closure of crowns from 21 to 40 percent" ru.short_description="сомкнутость крон от 21 до 40 процентов" />
+			<list_entry value="open" display_value="Medium (open)" ru.display_value="Средняя" short_description="closure of crowns from 41 to 60 percent" ru.short_description="сомкнутость крон от 41 до 60 процентов" />
+			<list_entry value="closed" display_value="Regular (closed)" ru.display_value="Высокая" short_description="closure of crowns from 61 to 80 percent" ru.short_description="сомкнутость крон от 61 до 80 процентов" />
+			<list_entry value="very_closed" display_value="Dense (very closed)" ru.display_value="Очень высокая" short_description="closure of crowns from 81 to 100 percent" ru.short_description="сомкнутость крон от 81 до 100 процентов" />
+		</combo>
+	</chunk>
+	<group name="Forest and forestry" ru.name="Лес и лесное хозяйство" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/wood.png">
+		<group name="Properties of Wood" ru.name="Свойства леса" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/wood.png">
+				<item name="General Properties of Wood" ru.name="Общие свойства леса" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/wood.png" type="node,closedway,multipolygon">
 					<label text="Edit Properties of Wood" ru.text="Общие свойства леса"/>
 					<text key="name" text="Name" />
 					<key key="natural" value="wood" />
 					<space />
-					<combo key="leaf_type" text="Type" ru.text="Тип листьев" values="broadleaved,needleleaved,mixed,leafless" >
-						<list_entry value="needleleaved" display_value="needleleaved" ru.display_value="Хвойный (иглолистный)" />
-						<list_entry value="broadleaved" display_value="broadleaved" ru.display_value="Лиственный (широколистный)" />
-						<list_entry value="mixed" display_value="Mixed" ru.display_value="Смешанный" />
-						<list_entry value="leafless" display_value="leafless" ru.display_value="Безлистный" />
-					</combo>
-					<combo key="leaf_cycle" text="Cycle" ru.text="Фенологический цикл" >
-						<list_entry value="evergreen" display_value="Evergreen" ru.display_value="Вечнозелёный" />
-						<list_entry value="deciduous" display_value="Deciduous" ru.display_value="Листопадный" />
-						<list_entry value="semi_evergreen" display_value="Semi_evergreen" ru.display_value="Полувечнозелёный" />
-						<list_entry value="semi_deciduous" display_value="Semi_deciduous" ru.display_value="Полулистопадный" />
-						<list_entry value="mixed" display_value="Mixed" ru.display_value="Смешанный" />
-					</combo>
+					<reference ref="leaf" />
 					<combo key="wood:origin" text="Origin" ru.text="Происхождение леса" >
 						<list_entry value="man_made" display_value="Man-made" ru.display_value="Рукотворное (посадки)" />
 						<list_entry value="natural" display_value="Natural" ru.display_value="Естественное" />
 					</combo>
-					<combo key="start_date" text="Start Date of wood" ru.text="Дата возникновения (год)" values="~1960s,1960s,~1961,1961" />
 					<combo key="wood:age" text="Age" ru.text="Возраст" >
-						<list_entry value="very_young" display_value="Very young" ru.display_value="Очень молодой лес" ru.short_description="деревца высотой до 3 м, толщина стволика до 2...4 см, крона на уровне глаз или ниже, возраст для быстрорастущих пород - до 10 лет, для медленнорастущих и хвойных - до 20 лет" />
-						<list_entry value="young" display_value="Young" ru.display_value="Молодой лес" ru.short_description="молодые деревья от 3 до 10 м в высоту, стволик от 2...4 до 8...10 см, крона выше уровня глаз, но просматриваемость часто осложняется обилием нижних отмирающих веток, возраст до 20 лет для быстрорастущих и до 30 лет для медленнорастущих и хвойных" />
-						<list_entry value="middle" display_value="Middle" ru.display_value="Средневозрастный лес" ru.short_description="высота деревьев более 10 м, толщина ствола от 8...10 до 16...20, кроны оформились, стволы хорошо очищены от сучьев, возраст 20...30 лет для быстрорастущих и 40...60 для медленнорастущих и хвойных" />
-						<list_entry value="adult" display_value="Mature" ru.display_value="Взрослый лес" ru.short_description="характеризуется замедлением роста деревьев в высоту и быстрым ростом в толщину, возраст 40...80 лет для быстрорастущих и 80...120 лет для медленнорастущих и хвойных" />
-						<list_entry value="old" display_value="Old" ru.display_value="Старый лес" ru.short_description="рост деревьев замедляется и почти прекращается, усиливается отпад, много сухостоя и валежа, лес изреживается, возраст более 80 лет для быстрорастущих пород и более 120 для медленнорастущих и хвойных" />
+						<list_entry value="sapling" display_value="Sapling" ru.display_value="Молодой лес" short_description="young trees from 3 to 10 m in height, trunk from 2-4 to 8-10 cm, age to 20 years for fast-growing and up to 30 years for slow-growing and coniferous" ru.short_description="молодые деревья от 3 до 10 м в высоту, стволик от 2...4 до 8...10 см, возраст до 20 лет для быстрорастущих и до 30 лет для медленнорастущих и хвойных" />
+						<list_entry value="pole" display_value="Pole" ru.display_value="Средневозрастный лес" short_description="the height of trees is more than 10 m, the thickness of the trunk is from 8-10 to 16-20 cm, the age is 20-30 years for fast-growing and 40-60 for slow growing and coniferous trees" ru.short_description="высота деревьев более 10 м, толщина ствола от 8...10 до 16...20 см, возраст 20...30 лет для быстрорастущих и 40...60 для медленнорастущих и хвойных" />
+						<list_entry value="mature" display_value="Mature" ru.display_value="Взрослый лес" short_description="age of trees 40-80 years for fast-growing and 80-120 years for slow growing and coniferous" ru.short_description="возраст 40...80 лет для быстрорастущих и 80...120 лет для медленнорастущих и хвойных" />
+						<list_entry value="old_growth" display_value="Old-growth" ru.display_value="Старый лес" short_description="age of trees over 80 years for fast-growing species and more than 120 for slow growing and coniferous" ru.short_description="возраст более 80 лет для быстрорастущих пород и более 120 для медленнорастущих и хвойных" />
 					</combo>
 					<combo key="wood:density" text="Density" ru.text="Густота" >
-						<list_entry value="very_sparse" display_value="Very sparse" ru.display_value="Очень редкий лес" ru.short_description="сомкнутость крон не превышает 20 процентов" />
-						<list_entry value="sparse" display_value="Sparse" ru.display_value="Редкий лес" ru.short_description="сомкнутость крон от 21 до 40 процентов" />
-						<list_entry value="middle" display_value="Medium" ru.display_value="Лес средней густоты" ru.short_description="сомкнутость крон от 41 до 60 процентов" />
-						<list_entry value="normal" display_value="Regular" ru.display_value="Лес нормальной густоты" ru.short_description="сомкнутость крон от 61 до 80 процентов" />
-						<list_entry value="dense" display_value="Dense" ru.display_value="Густой лес" ru.short_description="сомкнутость крон от 81 до 100 процентов" />
+						<list_entry value="sparse" display_value="Sparse" ru.display_value="Очень редкий лес" short_description="closure of crowns does not exceed 20 percent" ru.short_description="сомкнутость крон не превышает 20 процентов" />
+						<list_entry value="very_open" display_value="Sparse (very open)" ru.display_value="Редкий лес" short_description="closure of crowns from 21 to 40 percent" ru.short_description="сомкнутость крон от 21 до 40 процентов" />
+						<list_entry value="open" display_value="Medium (open)" ru.display_value="Лес средней густоты" short_description="closure of crowns from 41 to 60 percent" ru.short_description="сомкнутость крон от 41 до 60 процентов" />
+						<list_entry value="closed" display_value="Regular (closed)" ru.display_value="Лес нормальной густоты" short_description="closure of crowns from 61 to 80 percent" ru.short_description="сомкнутость крон от 61 до 80 процентов" />
+						<list_entry value="very_closed" display_value="Dense (very closed)" ru.display_value="Густой лес" short_description="closure of crowns from 81 to 100 percent" ru.short_description="сомкнутость крон от 81 до 100 процентов" />
 					</combo>
 					<optional>
+						<combo key="start_date" text="Start Date of wood" ru.text="Дата возникновения (год)" values="~2010s,2010s,~2011,2011" />
 						<text key="height" text="Height (m)" ru.text="Высота, м" />
 					</optional>
 				</item>
-				<item name="Flaw of Wood" ru.name="Пороки роста и развития леса" icon="wood_flaw.png" type="node,closedway,multipolygon">
-					<combo key="wood:flaw" text="Flaw" ru.text="Пороки развития" >
-						<list_entry value="krummholz" display_value="Krummholz" ru.display_value="Криволесье" ru.short_description="невысокий лес из деревьев с искривлёнными стволами и ветвями" />
-						<list_entry value="stunted" display_value="Stunted" ru.display_value="Низкорослый лес" ru.short_description="лес, неспособный достичь нормальной высоты вследствие неблагоприятных условий для произрастания" />
+				<separator/>
+				<item name="Seedling" ru.name="Мелкая поросль леса (seedling)" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/seedling.png" type="node,closedway,multipolygon">
+					<text key="name" text="Name" />
+					<key key="natural" value="scrub" />
+					<key key="scrub" value="seedling_trees" />
+					<space />
+					<reference ref="leaf" />
+					<combo key="scrub:origin" text="Origin" ru.text="Происхождение" >
+						<list_entry value="man_made" display_value="Man-made" ru.display_value="Рукотворное (посадки)" />
+						<list_entry value="natural" display_value="Natural" ru.display_value="Естественное" />
 					</combo>
-				</item>
-				<item name="Damaged Wood" ru.name="Повреждённый, больной лес" icon="wood_damage.png" type="node,closedway,multipolygon">
-					<combo key="wood:damage" text="Damage" ru.text="Повреждения (нелетальные)" >
-						<list_entry value="windfall" display_value="Windfall" ru.display_value="Ветровальный лес"  ru.short_description="лес, значительно пострадавший от ветровала и бурелома" />
-						<list_entry value="burnt" display_value="Burnt wood" ru.display_value="Горельник"  ru.short_description="лес, повреждённый пожаром, обожженный, но большей частью живой" />
-						<list_entry value="dead_wood" display_value="Dead wood" ru.display_value="Усыхающий лес"  ru.short_description="лес со значительным количеством усохших на корню деревьев"/>
-					</combo>
+					<reference ref="density" />
 					<optional>
-						<combo key="damage:start_date" text="Date of Damage" ru.text="Дата повреждения(год)" values="~1960s,1960s,~1961,1961" />
+						<combo key="start_date" text="Start Date of wood" ru.text="Дата возникновения (год)" values="~2010s,2010s,~2011,2011" />
+						<text key="height" text="Height (m)" ru.text="Высота, м" />
 					</optional>
 				</item>
-				<item name="Dead and burnt Wood" ru.name="Погибший лес" icon="deadwood.png" type="node,closedway,multipolygon">
-					<combo key="wood:lost" text="Lost" ru.text="Погибший лес" >
-						<list_entry value="windfall" display_value="Windfall" ru.display_value="Ветровал" ru.short_description="лес, погибший в результате сплошного ветровала и бурелома" />
-						<list_entry value="burnt" display_value="Burnt wood" ru.display_value="Гарь" ru.short_description="лес, погибший в результате природного пожара" />
-						<list_entry value="dead_wood" display_value="Dead wood" ru.display_value="Сухостой" ru.short_description="лес, усохший на корню" />
+				<item name="Stunted forest" ru.name="Низкорослый лес" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/stunted_forest.png" type="node,closedway,multipolygon">
+					<text key="name" text="Name" />
+					<key key="natural" value="scrub" />
+					<key key="scrub" value="stunted_trees" />
+					<space />
+					<reference ref="leaf" />
+					<combo key="scrub:age" text="Age" ru.text="Возраст" >
+						<list_entry value="seedling" display_value="Seedling" ru.display_value="Очень молодой лес"/>
+						<list_entry value="young" display_value="Young" ru.display_value="Молодой лес"/>
+						<list_entry value="middle" display_value="Middle"  ru.display_value="Средневозрастный лес"/>
+						<list_entry value="mature" display_value="Mature" ru.display_value="Взрослый, спелый лес"/>
+						<list_entry value="old" display_value="Old" ru.display_value="Старый, перестойный лес"/>
 					</combo>
+					<reference ref="density" />
 					<optional>
-						<combo key="lost:start_date" text="Date of Lost" ru.text="Дата гибели леса(год)" values="~1960s,1960s,~1961,1961" />
+						<check key="scrub:flaw" text="Krummholz" ru.text="Криволесье" value_on="krummholz" disable_off="true" />
+						<combo key="start_date" text="Start Date of wood" ru.text="Дата возникновения (год)" values="~2010s,2010s,~2011,2011" />
+						<text key="height" text="Height (m)" ru.text="Высота, м" />
 					</optional>
 				</item>
-				<item name="Logging Area" ru.name="Вырубка" icon="logging.png" type="node,closedway,multipolygon">
+				<item name="Scrub" ru.name="Заросли кустарника" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/bush.png" type="node,closedway,multipolygon">
+					<text key="name" text="Name" />
+					<key key="natural" value="scrub" />
+					<space />
+					<reference ref="leaf" />
+					<combo key="scrub:age" text="Age" ru.text="Возраст" >
+						<list_entry value="seedling" display_value="Seedling" ru.display_value="Всходы кустарника"/>
+						<list_entry value="young" display_value="Young" ru.display_value="Молодые кусты"/>
+						<list_entry value="middle" display_value="Middle" ru.display_value="Средневозрастные кусты" />
+						<list_entry value="mature" display_value="Mature" ru.display_value="Взрослые кусты" />
+						<list_entry value="old" display_value="Old" ru.display_value="Старые кусты" />
+					</combo>
+					<reference ref="density" />
+					<optional>
+						<combo key="start_date" text="Start Date of scrub" ru.text="Дата возникновения (год)" values="~2010s,2010s,~2011,2011" />
+						<text key="height" text="Height (m)" ru.text="Высота, м" />
+					</optional>
+				</item>
+				<separator/>
+				<item name="Damaged, dead Wood" ru.name="Повреждённый, больной, погибший лес" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/deadwood.png" type="node,closedway,multipolygon">
+					<label text="Burnt forest:" ru.text="Горелый лес:" />
+					<combo key="wood:burnt" text="Degree of Damage" ru.text="Степень повреждения" >
+						<list_entry value="very_low" display_value="Very low" ru.display_value="Незначительная"  short_description="0...20%" />
+						<list_entry value="low" display_value="Low" ru.display_value="Низкая"  short_description="21...40%" />
+						<list_entry value="moderate" display_value="Moderate" ru.display_value="Умеренная"  short_description="41...60%"  />
+						<list_entry value="moderately_severe" display_value="Moderately severe" ru.display_value="Умеренно тяжёлая"  short_description="61...80%" />
+						<list_entry value="severe" display_value="Severe" ru.display_value="Тяжёлая"  short_description="81...100%" />
+					</combo>
+					<combo key="wood:burnt:start_date" text="Date of Forest Fire" ru.text="Дата пожара (год)" values="~2010s,2010s,~2011,2011" />
+					<space />
+					<label text="Deadwood:" ru.text="Усыхающий лес:" />
+					<combo key="wood:dead" text="Degree of Damage" ru.text="Степень повреждения" >
+						<list_entry value="very_low" display_value="Very low" ru.display_value="Незначительная"  short_description="0...20%" />
+						<list_entry value="low" display_value="Low" ru.display_value="Низкая"  short_description="21...40%" />
+						<list_entry value="moderate" display_value="Moderate" ru.display_value="Умеренная"  short_description="41...60%"  />
+						<list_entry value="moderately_severe" display_value="Moderately severe" ru.display_value="Умеренно тяжёлая"  short_description="61...80%" />
+						<list_entry value="severe" display_value="Severe" ru.display_value="Тяжёлая"  short_description="81...100%" />
+					</combo>
+					<combo key="wood:dead:start_date" text="Date of forest death" ru.text="Дата усыхания (год)" values="~2010s,2010s,~2011,2011" />
+					<space />
+					<label text="Windfall:" ru.text="Ветровал:" />
+					<combo key="wood:windfall" text="Degree of Damage" ru.text="Степень повреждения" >
+						<list_entry value="very_low" display_value="Very low" ru.display_value="Незначительная"  short_description="0...20%" />
+						<list_entry value="low" display_value="Low" ru.display_value="Низкая"  short_description="21...40%" />
+						<list_entry value="moderate" display_value="Moderate" ru.display_value="Умеренная"  short_description="41...60%"  />
+						<list_entry value="moderately_severe" display_value="Moderately_severe" ru.display_value="Умеренно тяжёлая"  short_description="61...80%" />
+						<list_entry value="severe" display_value="Severe" ru.display_value="Тяжёлая"  short_description="81...100%" />
+					</combo>
+					<combo key="wood:windfall:start_date" text="Date of windfall" ru.text="Дата ветровала (год)" values="~2010s,2010s,~2011,2011" />
+				</item>
+				<item name="Logging Area" ru.name="Вырубка" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/logging.png" type="node,closedway,multipolygon">
 					<key key="landuse" value="logging" />
-					<combo key="logging:start_date" text="Start Date of Logging" ru.text="Дата (год) вырубки" values="~1960s,1960s,~1961,1961" />
-					<combo key="logging" text="Type of Logging Area" ru.text="Вид рубки" >
-						<list_entry value="clearcutting" display_value="Сlearcutting" ru.display_value="Сплошная" ru.short_description="территория, где в процессе рубки вырублен весь древостой, за исключением молодого поколения леса и единичных деревьев, составлявших основной древостой " />
-						<list_entry value="selective_cutting" display_value="Selective cutting" ru.display_value="Выборочная" ru.short_description="территория, где в процессе рубки вырублена часть основного древостоя" />
+					<combo key="logging:start_date" text="Start Date of Logging" ru.text="Дата (год) вырубки" values="~2010s,2010s,~2011,2011" />
+					<combo key="logging" text="Type of cuttang" ru.text="Вид рубки" >
+						<list_entry value="clearcutting" display_value="Сlearcutting" ru.display_value="Сплошная" short_description="all trees of the stand have been removed, except for staddle (sapling) and some mature trees" ru.short_description="вырублен весь древостой, за исключением единичных деревьев и молодого поколения леса" />
+						<list_entry value="selective_cutting" display_value="Selective cutting" ru.display_value="Выборочная" short_description="some of the trees in the stand have been removed" ru.short_description="вырублена некоторая часть основного древостоя" />
 					</combo>
 				</item>
 		</group> <!-- Properties of Wood -->
-		<group name="Quick - Wood" ru.name="Быстро -  лес" icon="quick_wood.png">
-					<item name="Coniferous forest" ru.name="Хвойные леса умеренных широт" icon="coniferous.png" type="node,closedway,multipolygon">
+		<group name="Quick - Wood" ru.name="Быстро -  лес" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/quick_wood.png">
+					<item name="Coniferous forest" ru.name="Хвойные леса умеренных широт" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/coniferous.png" type="node,closedway,multipolygon">
 						<key key="natural" value="wood" />
 						<key key="leaf_type" value="needleleaved" />
 						<key key="leaf_cycle" value="evergreen" />
 					</item>
-					<item name="Larch forest" ru.name="Хвойные листопадные леса (лиственница)" icon="coniferous.png" type="node,closedway,multipolygon">
+					<item name="Larch forest" ru.name="Хвойные листопадные леса (лиственница)" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/coniferous.png" type="node,closedway,multipolygon">
 						<key key="natural" value="wood" />
 						<key key="leaf_type" value="needleleaved" />
 						<key key="leaf_cycle" value="deciduous" />
 					</item>
-					<item name="Deciduous forest" ru.name="Лиственные леса умеренных широт" icon="deciduous.png" type="node,closedway,multipolygon">
+					<item name="Deciduous forest" ru.name="Лиственные леса умеренных широт" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/deciduous.png" type="node,closedway,multipolygon">
 						<key key="natural" value="wood" />
 						<key key="leaf_type" value="broadleaved" />
 						<key key="leaf_cycle" value="deciduous" />
 					</item>
-					<item name="Mixed forest" ru.name="Смешанные леса" icon="wood.png" type="node,closedway,multipolygon">
+					<item name="Mixed forest" ru.name="Смешанные леса" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/wood.png" type="node,closedway,multipolygon">
 						<key key="natural" value="wood" />
 						<key key="leaf_type" value="mixed" />
 					</item>
 					<separator/>
-					<item name="Young forest" ru.name="Молодой лес" icon="young_forest.png" type="node,closedway,multipolygon">
-						<key key="natural" value="wood" />
-						<key key="wood:age" value="young" />
+					<item name="Seedling" ru.name="Мелкая поросль леса (seedling)" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/seedling2.png" type="node,closedway,multipolygon">
+						<key key="natural" value="scrub" />
+						<key key="scrub" value="seedling" />
 					</item>
-					<item name="Artificial forest" ru.name="Рукотворный лес" icon="young_forest.png" type="node,closedway,multipolygon">
+					<item name="Sapling" ru.name="Молодой лес (sapling)" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/young_forest.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="wood:age" value="sapling" />
+					</item>
+					<item name="Pole" ru.name="Средневозрастный лес (pole)" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/young_forest.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="wood:age" value="pole" />
+					</item>
+					<item name="Mature forest" ru.name="Взрослый/спелый лес (mature)" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/forest.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="wood:age" value="mature" />
+					</item>
+					<item name="Old-growth forest" ru.name="Старый/перестойный лес (old-growth)" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/forest.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="wood:age" value="old_growth" />
+					</item>
+					<separator/>
+					<item name="Planted seedlings" ru.name="Молодые посадки" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/planted_seedling.png" type="node,closedway,multipolygon">
+						<key key="natural" value="scrub" />
+						<key key="scrub" value="seedling" />
+						<key key="scrub:origin" value="man_made" />
+					</item>
+					<item name="Planted forest" ru.name="Рукотворный лес" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/planted_forest.png" type="node,closedway,multipolygon">
 						<key key="natural" value="wood" />
 						<key key="wood:origin" value="man_made" />
 					</item>
-					<item name="Sparse forest" ru.name="Редкий лес" icon="sparse_forest.png" type="node,closedway,multipolygon">
+					<item name="Very sparse forest" ru.name="Очень редкий лес" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/sparse_forest.png" type="node,closedway,multipolygon">
 						<key key="natural" value="wood" />
 						<key key="wood:density" value="sparse" />
 					</item>
-					<item name="Windfall" ru.name="Ветровальный лес" icon="windfall_forest.png" type="node,closedway,multipolygon">
+					<item name="Sparse forest" ru.name="Редкий лес" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/sparse_forest.png" type="node,closedway,multipolygon">
 						<key key="natural" value="wood" />
-						<key key="wood:damage" value="windfall" />
+						<key key="wood:density" value="very_open" />
+					</item>
+					<item name="Medium density forest" ru.name="Лес средней густоты" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/sparse_forest.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="wood:density" value="open" />
+					</item>
+					<item name="Windfall" ru.name="Ветровальный лес" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/windfall_forest.png" type="node,closedway,multipolygon">
+						<key key="natural" value="wood" />
+						<key key="wood:windfall" value="yes" />
 					</item>
 					<separator/>
-					<item name="Burnt forest" ru.name="Гарь" icon="burnt_forest.png" type="node,closedway,multipolygon">
-						<key key="natural" value="heath" />
-						<key key="wood:lost" value="burnt" />
+					<item name="Burnt forest" ru.name="Гарь" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/burnt_forest.png" type="node,closedway,multipolygon">
+						<key key="was:natural" value="wood" />
+						<key key="wood:burnt" value="severe" />
 					</item>
-					<item name="Logging" ru.name="Вырубка" icon="cutting_forest.png" type="node,closedway,multipolygon">
+					<item name="Logging" ru.name="Вырубка" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/cutting_forest.png" type="node,closedway,multipolygon">
 						<key key="landuse" value="logging" />
 					</item>
 		</group> <!-- Quick - Wood -->
-		<group  name="Forestry Compartment and Cutline" ru.name="Лесные кварталы и просеки" icon="forestry_comp.png" > <!--  -->
-			<item name="Forestry Compartment" ru.name="Лесной квартал" icon="forestry_comp.png" type="node,closedway,multipolygon">
+		<group  name="Forestry Compartment and Cutline" ru.name="Лесные кварталы и просеки" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/forestry_comp.png" > <!--  -->
+			<item name="Forestry Compartment" ru.name="Лесной квартал" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/forestry_comp.png" type="node,closedway,multipolygon">
 				<label text="Edit Forestry Compartment" ru.text="Свойства лесного квартала" />
 				<space />
 				<key key="boundary" value="forestry_compartment" />
@@ -142,7 +248,7 @@
 				<text key="tenant" text="Lessee" ru.text="Арендатор" />
 			</item>
 			<separator/>
-			<item name="Cutline" ru.name="Просека" icon="cutline.png" type="way,closedway">
+			<item name="Cutline" ru.name="Просека" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/cutline.png" type="way,closedway">
 				<label text="Edit Cutline" ru.text="Свойства просеки" />
 				<key key="man_made" value="cutline" />
 				<text key="name" text="Name" />
@@ -176,33 +282,35 @@
 					<text key="width" text="Width (meters)" />
 				</optional>
 			</item>
-			<item name="Logway" ru.name="Трелёвочный волок" icon="logway.png" type="way">
+			<item name="Logway" ru.name="Трелёвочный волок" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/logway.png" type="way">
 				<label text="Edit Logway" ru.text="Свойства волока" />
 				<key key="man_made" value="logway" />
 				<combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
 				<text key="width" text="Width (meters)" />
 			</item>
-			<item name="Furrow" ru.name="Плужная борозда" icon="furrow.png" type="way">
+			<item name="Furrow" ru.name="Плужная борозда" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/furrow.png" type="way">
 				<label text="Edit Furrow" ru.text="Свойства борозды" />
 				<key key="barrier" value="furrow" />
 				<text key="width" text="Width (meters)" />
 			</item>
 			<separator />
-			<item name="Signpost of forestry compartment" ru.name="Квартальный столб" icon="signpost.png" type="node">
-				<label text="Edit Signpost of compartment (Several values have to be separated by a semicolon)" ru.text="Свойства квартального столба (несколько значений тегов разделять точкой с запятой)" />
+			<item name="Signpost of forestry compartment" ru.name="Квартальный столб" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/signpost.png" type="node">
+				<label text="Edit Signpost of compartment" ru.text="Свойства квартального столба" />
+				<label text="(Several values have to be separated by a semicolon)" ru.text="(Несколько значений тегов разделять точкой с запятой)" />
 				<key key="signpost" value="forestry_compartment" />
-				<text key="inscription" text="Inscription" ru.text="Надписи)"  />
-				<combo key="direction" text="Direction of Inscription" ru.text="Направления надписей)" values="N,NE,E,SE,S,SW,W,NW" display_values="N,NE,E,SE,S,SW,W,NW" ru.display_values="N,NE,E,SE,S,SW,W,NW" />
+				<text key="inscription" text="Inscription" ru.text="Надписи"  />
+				<combo key="direction" text="Direction of Inscription" ru.text="Направления надписей" values="N,NE,E,SE,S,SW,W,NW" display_values="N,NE,E,SE,S,SW,W,NW" ru.display_values="С,СВ,В,ЮВ,Ю,ЮЗ,З,СЗ" />
 			</item>
-			<item name="Signpost of forestry allotment" ru.name="Деляночный столб" icon="signpost.png" type="node">
-				<label text="Edit Signpost of allotment  (Several values have to be separated by a semicolon)" ru.text="Свойства деляночного столба (несколько значений тегов разделять точкой с запятой)" />
+			<item name="Signpost of forestry allotment" ru.name="Деляночный столб" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/small_signpost.png" type="node">
+				<label text="Edit Signpost of allotment" ru.text="Свойства деляночного столба" />
+				<label text="(Several values have to be separated by a semicolon)" ru.text="(Несколько значений тегов разделять точкой с запятой)" />
 				<key key="signpost" value="forestry_allotment" />
-				<text key="inscription" text="Inscription" ru.text="Надписи)"  />
-				<combo key="direction" text="Direction of Inscription" ru.text="Направления надписей)" values="N,NE,E,SE,S,SW,W,NW" display_values="N,NE,E,SE,S,SW,W,NW" ru.display_values="N,NE,E,SE,S,SW,W,NW" />
+				<text key="inscription" text="Inscription" ru.text="Надписи"  />
+				<combo key="direction" text="Direction of Inscription" ru.text="Направления надписей" values="N,NE,E,SE,S,SW,W,NW" display_values="N,NE,E,SE,S,SW,W,NW" ru.display_values="С,СВ,В,ЮВ,Ю,ЮЗ,З,СЗ" />
 			</item>
 		</group>
-		<group  name="Amenity in Forest" ru.name="Объекты благоустройства" icon="picnic.png" > <!--  -->
-				<item name="Forestry signs" ru.name="Указатель, аншлаг" icon="info_board.png" type="node">
+		<group  name="Amenity in Forest" ru.name="Объекты благоустройства" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/picnic.png" > <!--  -->
+				<item name="Forestry signs" ru.name="Указатель, аншлаг" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/info_board.png" type="node">
 					<label text="Edit Forestry sign" ru.text="Свойства указателя, аншлага" />
 					<combo key="forestry_sign" text="Forestry sign" ru.text="Назначение знака" default="yes" >
 						<list_entry value="informational" display_value="Informational" ru.display_value="Информационный аншлаг" />
@@ -219,7 +327,7 @@
 						<text key="material" text="Material of sign" ru.text="Материал изготовления" />
 					</optional>
 				</item>
-				<item name="Shelter" ru.name="Укрытие от непогоды" icon="shed.png" type="node,closedway">
+				<item name="Shelter" ru.name="Укрытие от непогоды" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/shed.png" type="node,closedway">
 					<label text="Edit Shelter" ru.text="Свойства укрытия от непогоды" />
 					<text key="name" text="Name" />
 					<key key="amenity" value="shelter" />
@@ -232,7 +340,7 @@
 						<combo key="material" text="Material of shelter" ru.text="Материал изготовления" values="wood" />
 					</optional>
 				</item>
-				<item name="Picnic table" ru.name="Стол с лавочками" icon="picnic.png" type="node">
+				<item name="Picnic table" ru.name="Стол с лавочками" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/picnic.png" type="node">
 					<label text="Edit Picnic table" ru.text="Свойства стола с лавочками" />
 					<key key="amenity" value="picnic_table" />
 					<text key="name" text="Name" />
@@ -241,7 +349,7 @@
 						<combo key="material" text="Material" values="wood" />
 					</optional>
 				</item>
-				<item name="Bench" ru.name="Скамья" icon="seat.png" type="node">
+				<item name="Bench" ru.name="Скамья" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/seat.png" type="node">
 					<label text="Edit Bench" ru.text="Свойства скамьи" />
 					<key key="amenity" value="bench" />
 					<text key="name" text="Name" />
@@ -251,7 +359,7 @@
 						<combo key="material" text="Material" values="wood" />
 					</optional>
 				</item>
-				<item name="Fire pit" ru.name="Место для костра" icon="fire-pit.svg" type="node">
+				<item name="Fire pit" ru.name="Место для костра" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/fire-pit.svg" type="node">
 					<label text="Edit Fire pit" ru.text="Свойства места для костра" />
 					<key key="leisure" value="firepit" />
 					<text key="name" text="Name" />
@@ -261,7 +369,7 @@
 					</optional>
 				</item>
 			<separator />
-				<item name="Building" icon="house.png" type="node,closedway,multipolygon" >
+				<item name="Building" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/house.png" type="node,closedway,multipolygon" >
 					<space />
 					<combo key="building" text="Building" default="yes" >
 						<list_entry value="yes" display_value="Yes" ru.display_value="Да" />
@@ -274,7 +382,7 @@
 					<combo key="lock" text="Lock" values="yes,no,unknown" />
 				</item> <!-- Building -->
 			<separator />
-				<item name="Observation Tower" ru.name="Пожарная вышка" icon="watchtower.svg" type="node,closedway,multipolygon" >
+				<item name="Observation Tower" ru.name="Пожарная вышка" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/watchtower.svg" type="node,closedway,multipolygon" >
 					<key key="man_made" value="tower" />
 					<key key="tower:type" value="observation" />
 					<space />
@@ -286,8 +394,8 @@
 					<combo key="lock" text="Lock" values="yes,no,unknown" />
 				</item> <!-- Observation Tower -->
 		</group> <!--  -->
-		<group  name="Wildlife Management and Hunting" ru.name="Объекты охотничьего хозяйства" icon="rifle.png" > <!--  -->
-				<item name="Hunting Stand" ru.name="Охотничье укрытие" icon="hunting-stand.svg" type="node">
+		<group  name="Wildlife Management and Hunting" ru.name="Объекты охотничьего хозяйства" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/rifle.png" > <!--  -->
+				<item name="Hunting Stand" ru.name="Охотничье укрытие" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/hunting-stand.svg" type="node">
 					<space />
 					<key key="amenity" value="hunting_stand" />
 					<combo key="hunting_stand" text="Hunting Stand" ru.text="Тип укрытия" default="raised_hide" >
@@ -305,24 +413,31 @@
 					</optional>
 				</item> <!-- Hunting Stand -->
 			<separator />
-				<item name="Game Feeder" ru.name="Кормушка для дичи" icon="cratch.png" type="node" >
+				<item name="Game Feeder" ru.name="Кормушка для дичи" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/cratch.png" type="node" >
 					<space />
 					<key key="man_made" value="game_feeder" />
 					<text key="name" text="Name" />
 					<text key="operator" text="Operator" />
 				</item>
-				<item name="Salt Lick" ru.name="Солонец" icon="salt_lick.png" type="node" >
+				<item name="Salt Lick" ru.name="Солонец" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/salt_lick.png" type="node" >
 					<space />
 					<key key="man_made" value="salt_lick" />
 					<text key="name" text="Name" />
 					<text key="operator" text="Operator" />
 				</item>
 			<separator />
-				<item name="Food Plot" ru.name="Кормовое поле" icon="arable.png" type="node,closedway,multipolygon" >
+				<item name="Food Plot" ru.name="Кормовое поле" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/arable.png" type="node,closedway,multipolygon" >
 					<space />
 					<key key="landuse" value="food_plot" />
 					<text key="name" text="Name" />
 					<text key="operator" text="Operator" />
+				</item>
+		</group> <!--  -->
+		<group  name="Other" ru.name="Другое" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/fallen_tree.png" > <!--  -->
+				<item name="Tree fallen on road" ru.name="Дерево, упавшее на дорогу" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/fallen_tree.png" type="node" >
+					<space />
+					<key key="barrier" value="log" />
+					<text key="check_date" text="Date of latest review" ru.text="Дата последнего наблюдения" />
 				</item>
 		</group> <!--  -->
 	</group> <!--  -->
