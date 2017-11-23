@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 	author="igitov"
-	version="0.2.10"
+	version="0.2.11"
 	description="Presets for forest and forestry tagging"
 	ru.description="Лес, лесное и охотничье хозяйство"
 	shortdescription="Forest" ru.shortdescription="Лес"
-	icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/wood.png>
-	link="https://github.com/igitov/forest-josm-tagging-presets"
-<!--
+	icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/wood.png"
+	link="https://github.com/igitov/forest-josm-tagging-presets">
 
-	
--->
 	<chunk id="leaf">
 		<combo key="leaf_type" text="Type" ru.text="Тип листьев" values="broadleaved,needleleaved,mixed,leafless" >
 			<list_entry value="needleleaved" display_value="Needleleaved" ru.display_value="Хвойный (иглолистный)" />
@@ -238,7 +235,8 @@
 					</item>
 		</group> <!-- Quick - Wood -->
 		<group  name="Forestry Compartment and Cutline" ru.name="Лесные кварталы и просеки" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/forestry_comp.png" > <!--  -->
-			<item name="Forestry Compartment" ru.name="Лесной квартал" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/forestry_comp.png" type="node,closedway,multipolygon">
+			<item name="Forestry Compartment" ru.name="Лесной квартал" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/forestry_comp.png" type="relation,multipolygon">
+				<key key="type" value="multipolygon" />
 				<label text="Edit Forestry Compartment" ru.text="Свойства лесного квартала" />
 				<space />
 				<key key="boundary" value="forestry_compartment" />
@@ -246,8 +244,18 @@
 				<text key="old_ref" text="Old Ref" ru.text="Старый номер квартала" />
 				<text key="operator" text="Operator" />
 				<text key="tenant" text="Lessee" ru.text="Арендатор" />
+				<roles>
+					<role key="outer" text="outer segment" requisite="required" type="way,closedway" />
+					<role key="inner" text="inner segment" requisite="optional" type="way,closedway" />
+				</roles>
 			</item>
 			<separator/>
+			<item name="Border of Forestry Compartment" ru.name="Граница лесного квартала" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/border.png" type="way,closedway">
+				<label text="Edit Border of Forestry Compartment" ru.text="Свойства границы квартала" />
+				<key key="boundary" value="forestry_compartment" />
+				<space />
+				<text key="source" text="Source" />
+			</item>
 			<item name="Cutline" ru.name="Просека" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/cutline.png" type="way,closedway">
 				<label text="Edit Cutline" ru.text="Свойства просеки" />
 				<key key="man_made" value="cutline" />
