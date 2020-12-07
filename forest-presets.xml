@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 	author="igitov"
-	version="0.2.11"
+	version="0.2.12"
 	description="Presets for forest and forestry tagging"
 	ru.description="Лес, лесное и охотничье хозяйство"
 	shortdescription="Forest" ru.shortdescription="Лес"
@@ -63,7 +63,7 @@
 					</optional>
 				</item>
 				<separator/>
-				<item name="Seedling" ru.name="Мелкая поросль леса (seedling)" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/seedling.png" type="node,closedway,multipolygon">
+				<item name="Seedling trees" ru.name="Мелкая поросль леса (seedling)" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/seedling.png" type="node,closedway,multipolygon">
 					<text key="name" text="Name" />
 					<key key="natural" value="scrub" />
 					<key key="scrub" value="seedling_trees" />
@@ -75,7 +75,7 @@
 					</combo>
 					<reference ref="density" />
 					<optional>
-						<combo key="start_date" text="Start Date of wood" ru.text="Дата возникновения (год)" values="~2010s,2010s,~2011,2011" />
+						<combo key="start_date" text="Start Date of wood" ru.text="Дата возникновения (год)" values="~2020s,2020s,~2020,2020" />
 						<text key="height" text="Height (m)" ru.text="Высота, м" />
 					</optional>
 				</item>
@@ -86,7 +86,7 @@
 					<space />
 					<reference ref="leaf" />
 					<combo key="scrub:age" text="Age" ru.text="Возраст" >
-						<list_entry value="seedling" display_value="Seedling" ru.display_value="Очень молодой лес"/>
+						<list_entry value="seedling_trees" display_value="Seedling trees" ru.display_value="Очень молодой лес"/>
 						<list_entry value="young" display_value="Young" ru.display_value="Молодой лес"/>
 						<list_entry value="middle" display_value="Middle"  ru.display_value="Средневозрастный лес"/>
 						<list_entry value="mature" display_value="Mature" ru.display_value="Взрослый, спелый лес"/>
@@ -95,7 +95,7 @@
 					<reference ref="density" />
 					<optional>
 						<check key="scrub:flaw" text="Krummholz" ru.text="Криволесье" value_on="krummholz" disable_off="true" />
-						<combo key="start_date" text="Start Date of wood" ru.text="Дата возникновения (год)" values="~2010s,2010s,~2011,2011" />
+						<combo key="start_date" text="Start Date of wood" ru.text="Дата возникновения (год)" values="~2020s,2020s,~2020,2020" />
 						<text key="height" text="Height (m)" ru.text="Высота, м" />
 					</optional>
 				</item>
@@ -179,9 +179,9 @@
 						<key key="leaf_type" value="mixed" />
 					</item>
 					<separator/>
-					<item name="Seedling" ru.name="Мелкая поросль леса (seedling)" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/seedling2.png" type="node,closedway,multipolygon">
+					<item name="Seedling trees" ru.name="Мелкая поросль леса (seedling)" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/seedling2.png" type="node,closedway,multipolygon">
 						<key key="natural" value="scrub" />
-						<key key="scrub" value="seedling" />
+						<key key="scrub" value="seedling_trees" />
 					</item>
 					<item name="Sapling" ru.name="Молодой лес (sapling)" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/young_forest.png" type="node,closedway,multipolygon">
 						<key key="natural" value="wood" />
@@ -202,7 +202,7 @@
 					<separator/>
 					<item name="Planted seedlings" ru.name="Молодые посадки" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/planted_seedling.png" type="node,closedway,multipolygon">
 						<key key="natural" value="scrub" />
-						<key key="scrub" value="seedling" />
+						<key key="scrub" value="seedling_trees" />
 						<key key="scrub:origin" value="man_made" />
 					</item>
 					<item name="Planted forest" ru.name="Рукотворный лес" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/planted_forest.png" type="node,closedway,multipolygon">
@@ -427,6 +427,13 @@
 					<text key="name" text="Name" />
 					<text key="operator" text="Operator" />
 				</item>
+				<item name="Grouse Grit Station" ru.name="Галечник для боровой дичи" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/grouse_grit.png" type="node" >
+					<space />
+					<key key="man_made" value="grouse_grit" />
+					<text key="name" text="Name" />
+					<text key="operator" text="Operator" />
+					<text key="construction" text="Construction" values="box,pile" />
+				</item>
 				<item name="Salt Lick" ru.name="Солонец" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/salt_lick.png" type="node" >
 					<space />
 					<key key="man_made" value="salt_lick" />
@@ -446,6 +453,21 @@
 					<space />
 					<key key="barrier" value="log" />
 					<text key="check_date" text="Date of latest review" ru.text="Дата последнего наблюдения" />
+				</item>
+				<separator />
+				<item name="Beaver dam" ru.name="Бобровая плотина" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/fallen_tree.png" type="node,way,closedway,multipolygon" >
+					<space />
+					<key key="natural" value="beaver_dam" />
+					<key key="waterway" value="dam" />
+					<text key="width" text="Width (meters)" />
+					<text key="hight" text="Hight (meters)" />
+					<check key="highway" text="Path" ru.text="Тропа" value_on="path" disable_off="true" />
+				</item>
+				<item name="Beaver lodge" ru.name="Бобровая хатка" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/fallen_tree.png" type="node,way,closedway,multipolygon" >
+					<space />
+					<key key="natural" value="beaver_lodge" />
+					<text key="width" text="Width (meters)" />
+					<text key="hight" text="Hight (meters)" />
 				</item>
 		</group> <!--  -->
 	</group> <!--  -->
