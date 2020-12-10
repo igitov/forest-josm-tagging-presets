@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 	author="igitov"
-	version="0.2.12"
+	version="0.2.14"
 	description="Presets for forest and forestry tagging"
 	ru.description="Лес, лесное и охотничье хозяйство"
 	shortdescription="Forest" ru.shortdescription="Лес"
@@ -391,6 +391,7 @@
 				</item> <!-- Building -->
 			<separator />
 				<item name="Observation Tower" ru.name="Пожарная вышка" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/watchtower.svg" type="node,closedway,multipolygon" >
+					<label text="Edit Observation Tower" ru.text="Свойства пожарной вышки" />
 					<key key="man_made" value="tower" />
 					<key key="tower:type" value="observation" />
 					<space />
@@ -404,6 +405,7 @@
 		</group> <!--  -->
 		<group  name="Wildlife Management and Hunting" ru.name="Объекты охотничьего хозяйства" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/rifle.png" > <!--  -->
 				<item name="Hunting Stand" ru.name="Охотничье укрытие" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/hunting-stand.svg" type="node">
+					<label text="Edit Hunting Stand" ru.text="Свойства охотничьего укрытия" />
 					<space />
 					<key key="amenity" value="hunting_stand" />
 					<combo key="hunting_stand" text="Hunting Stand" ru.text="Тип укрытия" default="raised_hide" >
@@ -422,19 +424,23 @@
 				</item> <!-- Hunting Stand -->
 			<separator />
 				<item name="Game Feeder" ru.name="Кормушка для дичи" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/cratch.png" type="node" >
+					<label text="Edit Game Feeder" ru.text="Свойства кормушки для дичи" />
 					<space />
 					<key key="man_made" value="game_feeder" />
 					<text key="name" text="Name" />
 					<text key="operator" text="Operator" />
+					<combo key="shelter" text="Shelter" values="yes,no,unknown" />
 				</item>
 				<item name="Grouse Grit Station" ru.name="Галечник для боровой дичи" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/grouse_grit.png" type="node" >
+					<label text="Edit Grouse Grit Station" ru.text="Свойства галечника для боровой дичи" />
 					<space />
 					<key key="man_made" value="grouse_grit" />
 					<text key="name" text="Name" />
 					<text key="operator" text="Operator" />
-					<text key="construction" text="Construction" values="box,pile" />
+					<text key="grouse_grit:construction" text="Construction" values="box,pile" />
 				</item>
 				<item name="Salt Lick" ru.name="Солонец" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/salt_lick.png" type="node" >
+					<label text="Edit Salt Lick" ru.text="Свойства солонца для дичи" />
 					<space />
 					<key key="man_made" value="salt_lick" />
 					<text key="name" text="Name" />
@@ -450,12 +456,14 @@
 		</group> <!--  -->
 		<group  name="Other" ru.name="Другое" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/fallen_tree.png" > <!--  -->
 				<item name="Tree fallen on road" ru.name="Дерево, упавшее на дорогу" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/fallen_tree.png" type="node" >
+					<label text="Edit Tree fallen on road" ru.text="Свойства упавшего на дорогу дерева" />
 					<space />
 					<key key="barrier" value="log" />
 					<text key="check_date" text="Date of latest review" ru.text="Дата последнего наблюдения" />
 				</item>
 				<separator />
-				<item name="Beaver dam" ru.name="Бобровая плотина" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/fallen_tree.png" type="node,way,closedway,multipolygon" >
+				<item name="Beaver Dam" ru.name="Бобровая плотина" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/fallen_tree.png" type="node,way,closedway,multipolygon" >
+					<label text="Edit Beaver Dam" ru.text="Свойства бобровой плотины" />
 					<space />
 					<key key="natural" value="beaver_dam" />
 					<key key="waterway" value="dam" />
@@ -463,7 +471,8 @@
 					<text key="hight" text="Hight (meters)" />
 					<check key="highway" text="Path" ru.text="Тропа" value_on="path" disable_off="true" />
 				</item>
-				<item name="Beaver lodge" ru.name="Бобровая хатка" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/fallen_tree.png" type="node,way,closedway,multipolygon" >
+				<item name="Beaver Lodge" ru.name="Бобровая хатка" icon="https://raw.githubusercontent.com/igitov/forest-josm-tagging-presets/master/fallen_tree.png" type="node,way,closedway,multipolygon" >
+					<label text="Edit Beaver Lodge" ru.text="Свойства бобровой хатки" />
 					<space />
 					<key key="natural" value="beaver_lodge" />
 					<text key="width" text="Width (meters)" />
